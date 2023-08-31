@@ -407,7 +407,7 @@ workspace.ChildRemoved:Connect(function(Object)
     end
 end)
 EntityInfo.Screech.OnClientEvent:Connect(function()
-    if not table.find(ScreechSafeRooms, tostring(LocalPlayer:GetAttribute("CurrentRoom"))) and CurrentRooms[LocalPlayer:GetAttribute("CurrentRoom")]:GetAttribute("Ambient") == Color3.new() and DisableScreech = false then
+    if not table.find(ScreechSafeRooms, tostring(LocalPlayer:GetAttribute("CurrentRoom"))) and CurrentRooms[LocalPlayer:GetAttribute("CurrentRoom")]:GetAttribute("Ambient") == Color3.new() and DisableScreech == false then
         require(CustomScreechModule)(require(Main_Game))
     else
         EntityInfo.Screech:FireServer(true)
