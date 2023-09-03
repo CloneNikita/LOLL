@@ -540,8 +540,12 @@ Tab:Toggle("Noclip","Lets you walk through any object. Does not work on Doors.",
     end
     PrimaryPart.CanCollide = not Noclip
 end)
-Tab:Slider("Speed Boost","Boosts your speed.",0,6,0,function(speed)
-    SpeedBoost = speed
+Tab:Toggle("Speed Boost","Boosts your speed.",false,function(speed)
+  if speed == true then  
+SpeedBoost = 6
+else
+SpeedBoost = 0
+end
     ApplySpeed(true)
 end)
 if Floor.Value == "Hotel" or Floor.Value == "Fools" then
